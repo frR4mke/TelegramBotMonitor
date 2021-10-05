@@ -13,15 +13,15 @@ const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
 
 bot.on('message', msg => {    
 
-    if (!isCommand(msg) || !commands.includes(msg)) {
+    console.log(msg.text)
+
+    if (!isCommand(msg)) {
         bot.sendMessage(msg.chat.id, 'Для вывода обрабатываемых команд, введи /help')
     }
 });
 
 
-bot.onText(/\/price (.+)/ , (msg, match) => {       
-
-    console.log(match[1])
+bot.onText(/\/price (.+)/ , (msg, match) => {         
 
     pleerParser.getPrices(match[1]).catch(e => {
         bot.sendMessage(msg.chat.id, 'Что-то разъебалось');
