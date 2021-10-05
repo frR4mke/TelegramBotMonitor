@@ -1,7 +1,7 @@
 "use strict";
 const TelegramBot = require("node-telegram-bot-api");
 
-const pleerParser = require("../TG/pleerparser/pleerparser");
+const pleerParser = require("./pleerparser/pleerparser");
 const bot = new TelegramBot('2034784132:AAGMPPO1rciFpIZC9dfU8c_npMTblDIGDhs', { polling: true });
 
 const commands = ['price,help'];
