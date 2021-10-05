@@ -10,7 +10,7 @@ const pleerParser = require("./pleerparser/pleerparser");
 // bot.setWebHook(`${process.env.HEROKU}/${process.env.BOT_TOKEN}`);
 
 const bot = new TelegramBot(process.env.BOT_TOKEN);
-
+bot.setWebHook(`${process.env.HEROKU}/bot${process.env.BOT_TOKEN}`);
 // if (process.env.NODE_ENV === 'production') {
 //     bot = new TelegramBot(token);
 //     bot.setWebHook(`${process.env.HEROKU}/${process.env.BOT_TOKEN}`);
