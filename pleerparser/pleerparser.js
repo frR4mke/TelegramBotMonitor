@@ -3,11 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getPrices = void 0;
 const rest_1 = require("../rest/rest");
 const typescript_collections_1 = require("typescript-collections");
-async function getPrices() {
-    return (0, rest_1.readBodyFrom)(`https://www.pleer.ru/search_iphone+12_1-61,2-0,7-(88),3-(),4-(),5-0,8-0,9-0,6-7.html`)
-        .catch(e => {
-        console.log(e);
-    }).then(response => {
+async function getPrices(model) {
+    return (0, rest_1.readBodyFrom)(`https://www.pleer.ru/search_iphone+${model}_1-61,2-0,7-(88),3-(),4-(),5-0,8-0,9-0,6-7.html`)
+        .then(response => {
         const root = response;
         if (root) {
             const _item_names = root.querySelectorAll('.pad_r');
