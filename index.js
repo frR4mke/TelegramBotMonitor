@@ -2,7 +2,9 @@
 const TelegramBot = require("node-telegram-bot-api");
 
 const pleerParser = require("./pleerparser/pleerparser");
-const bot = new TelegramBot('2034784132:AAGMPPO1rciFpIZC9dfU8c_npMTblDIGDhs', { polling: true });
+const bot = new TelegramBot('2034784132:AAGMPPO1rciFpIZC9dfU8c_npMTblDIGDhs');
+
+bot.setWebHook('https://telegrambotmonitor.herokuapp.com/ + /bot' + '2034784132:AAGMPPO1rciFpIZC9dfU8c_npMTblDIGDhs');
 
 const commands = ['price,help'];
 
