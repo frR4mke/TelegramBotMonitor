@@ -2,7 +2,7 @@
 require('dotenv').config();
 const TelegramBot = require("node-telegram-bot-api");
 const commands = ['price,help'];
-
+const pleerParser = require("./pleerparser/pleerparser");
 
 
 const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
