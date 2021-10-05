@@ -1,8 +1,8 @@
 "use strict";
 
-require('https').createServer().listen(process.env.PORT || 5000).on('request', function(req, res){
-    res.end('')
-  });
+// require('https').createServer().listen(process.env.PORT || 5000).on('request', function(req, res){
+//     res.end('')
+//   });
 
   
 const TelegramBot = require("node-telegram-bot-api");
@@ -17,7 +17,7 @@ const pleerParser = require("./pleerparser/pleerparser");
 const bot = new TelegramBot(process.env.BOT_TOKEN);
 // const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
 
-bot.setWebHook(`${process.env.HEROKU}/${process.env.BOT_TOKEN}`);
+// bot.setWebHook(`${process.env.HEROKU}/${process.env.BOT_TOKEN}`);
 // bot.startWebhook(`/bot${process.env.BOT_TOKEN}`, null);
 // if (process.env.NODE_ENV === 'production') {
 //     bot = new TelegramBot(token);
