@@ -21,7 +21,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const telegraf_1 = require("telegraf");
 const pleerParser = __importStar(require("../TG/pleerparser/pleerparser"));
-const bot = new telegraf_1.Telegraf('2034784132:AAGMPPO1rciFpIZC9dfU8c_npMTblDIGDhs');
+const bot = new telegraf_1.Telegraf('2034784132:AAGMPPO1rciFpIZC9dfU8c_npMTblDIGDhs', {polling: true});
 bot.command('price', (ctx) => {
     pleerParser.getPrices().catch(e => {
         console.log(e);
