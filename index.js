@@ -5,9 +5,9 @@ const commands = ['price,help'];
 
 
 
-// const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
+const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
 
-const bot = new TelegramBot(process.env.BOT_TOKEN);
+// const bot = new TelegramBot(process.env.BOT_TOKEN);
 // bot.setWebHook(`${process.env.HEROKU}/${process.env.BOT_TOKEN}`);
 
 
