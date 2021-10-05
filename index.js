@@ -1,14 +1,26 @@
 "use strict";
+
 const TelegramBot = require("node-telegram-bot-api");
+require('dotenv').config();
+
 
 const pleerParser = require("./pleerparser/pleerparser");
-const bot = new TelegramBot('2034784132:AAGMPPO1rciFpIZC9dfU8c_npMTblDIGDhs');
+// const bot = new TelegramBot(process.env.BOT_TOKEN, {polling: true});
 
-bot.setWebHook('https://telegrambotmonitor.herokuapp.com/2034784132:AAGMPPO1rciFpIZC9dfU8c_npMTblDIGDhs');
+// bot.setWebHook(`${process.env.HEROKU}/${process.env.BOT_TOKEN}`);
+
+const bot = new TelegramBot(process.env.BOT_TOKEN);
+
+// if (process.env.NODE_ENV === 'production') {
+//     bot = new TelegramBot(token);
+//     bot.setWebHook(`${process.env.HEROKU}/${process.env.BOT_TOKEN}`);
+// } else {
+//     bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
+// }
 
 const commands = ['price,help'];
 
-bot.on('message', msg => { 
+bot.on('message', msg => {    
 
     if (!isCommand(msg) || !commands.includes(msg)) {
         bot.sendMessage(msg.chat.id, 'Для вывода обрабатываемых команд, введи /help')
